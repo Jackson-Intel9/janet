@@ -1,7 +1,7 @@
 """Convenience functions wrapping the behavior of jax.stax"""
 import numpy as np
 from copy import deepcopy
-from jax.experimental import stax
+from jax.example_libraries import stax
 from jax import numpy as jnp
 from jax import jit as jjit
 from jax import value_and_grad

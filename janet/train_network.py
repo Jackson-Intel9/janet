@@ -3,7 +3,7 @@
 from jax import random as jran
 from jax import numpy as jnp
 from jax import jit as jjit
-from jax.experimental import optimizers as jax_opt
+from jax.example_libraries import optimizers as jax_opt
 from .retrieve_fake_fsps_data import load_fake_sps_data
 from .generate_tdata import get_diffstar_photometry_tdata_batch
 from .network_helpers import get_network, train_network
