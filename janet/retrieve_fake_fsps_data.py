@@ -1,7 +1,7 @@
 """
 """
 import numpy as np
-from scipy.stats import norm
+from jax.scipy.stats import norm as jnorm
 import os
 
 
@@ -34,7 +34,7 @@ def _get_wave_ssp():
     x = np.arange(n_wave_ssp)
     c0, c1 = 2.358, 0.00257
     lg_wave_ssp = c0 + c1 * x
-    wave_ssp = 10 ** lg_wave_ssp
+    wave_ssp = 10**lg_wave_ssp
     return wave_ssp
 
 
@@ -55,27 +55,27 @@ def _get_spec_ssp():
 
 
 def _lsst_u_trans(x):
-    return norm.pdf(x, loc=3.57, scale=0.022) / 80
+    return jnorm.pdf(x, loc=3.57, scale=0.022) / 80
 
 
 def _lsst_g_trans(x):
-    return norm.pdf(x, loc=3.68, scale=0.04) / 20
+    return jnorm.pdf(x, loc=3.68, scale=0.04) / 20
 
 
 def _lsst_r_trans(x):
-    return norm.pdf(x, loc=3.79, scale=0.03) / 25
+    return jnorm.pdf(x, loc=3.79, scale=0.03) / 25
 
 
 def _lsst_i_trans(x):
-    return norm.pdf(x, loc=3.875, scale=0.025) / 30
+    return jnorm.pdf(x, loc=3.875, scale=0.025) / 30
 
 
 def _lsst_z_trans(x):
-    return norm.pdf(x, loc=3.935, scale=0.017) / 47
+    return jnorm.pdf(x, loc=3.935, scale=0.017) / 47
 
 
 def _lsst_y_trans(x):
-    return norm.pdf(x, loc=3.985, scale=0.017) / 85
+    return jnorm.pdf(x, loc=3.985, scale=0.017) / 85
 
 
 def _get_filter_waves():
