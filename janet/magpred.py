@@ -2,6 +2,7 @@
 """
 from jax import jit as jjit
 from jax import numpy as jnp
+from jax import vmap
 from .flux import _calc_rest_mag_multifilter
 from .wssp import _calc_weighted_ssp_from_diffstar_params
 from .stars import DEFAULT_MAH_PARAMS
@@ -39,3 +40,7 @@ def _pred_mags_singlegal(
 
     mags = _calc_rest_mag_multifilter(ssp_wave, lum_spec, wave_filters, trans_filters)
     return mags
+
+
+_a = [0, *[None] * 7]
+_pred_mags_galpop = jjit(vmap(_pred_mags_singlegal, in_axes=_a))
