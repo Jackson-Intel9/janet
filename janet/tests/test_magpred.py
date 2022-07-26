@@ -56,7 +56,7 @@ def test_calc_weighted_ssp_from_diffstarpop():
     q_params = np.array(list(DEFAULT_Q_PARAMS.values()))
     params_singlegal = np.array((*mah_params, *ms_params, *q_params))
 
-    n_gals = 10_000
+    n_gals = 1_000
     shape_pop = (n_gals, params_singlegal.size)
     params_galpop = np.tile(params_singlegal, n_gals).reshape(shape_pop)
 
