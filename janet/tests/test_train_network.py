@@ -3,8 +3,8 @@
 import os
 from ..train_network import train_photometry_network
 
-NBATCH = os.environ.get(int("JANET_NBATCH"), 20)
-NSTEPS = os.environ.get(int("JANET_NSTEPS"), 20)
+NBATCH = int(os.environ.get("JANET_NBATCH", 20))
+NSTEPS = int(os.environ.get("JANET_NSTEPS", 20))
 
 
 def test_train_photometry_network():
